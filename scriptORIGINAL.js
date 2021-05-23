@@ -44,9 +44,9 @@ function playRound(playerSelection, computerSelection) {
     else {
         return "Illegal"
     }
-};
+}
 
-/*function game() {
+function game() {
     let computerScore = 0;
     let playerScore = 0;
     for (let i = 0; i <= 4; i++) {
@@ -73,41 +73,6 @@ function playRound(playerSelection, computerSelection) {
     else if (playerScore === computerScore) {
         return "A draw! You scored " + playerScore + ", the computer scored " + computerScore;
     }
-};*/
-function runningTotal(playerSelection, computerSelection) {
-    let computerScore = 0;
-    let playerScore = 0;
-    let result = playRound(playerSelection, computerSelection);
-    if (result === "Win") {
-        playerScore++;
-    }
-    else if (result === "Loss") {
-        computerScore++;
-    }
-};
-let computerScore = 0;
-let playerScore = 0;
+}
 
-const buttons = document.querySelectorAll('button');
-const scoreBoard = document.querySelector('#scoreBoard');
-buttons.forEach((button) => {
-
-  button.addEventListener('click', () => {
-      result = playRound(button.id, computerPlay());
-      if (result === "Win") {
-        playerScore++;
-    }
-      else if (result === "Loss") {
-        computerScore++;
-    }
-    scoreBoard.textContent = result + "! Player: " + playerScore + " Computer: " + computerScore;
-    if (playerScore === 5) {
-        scoreBoard.textContent = "You win!!!";
-        computerScore = 0, playerScore = 0;
-    }
-    else if (computerScore === 5) {
-        scoreBoard.textContent = "You lose!!!";
-        computerScore = 0, playerScore = 0;
-    }
-  });
-});
+console.log(game())
